@@ -2,11 +2,7 @@
   "name": "s3stream",
   "version": "1.0.0",
   "description": "Thin wrapper to stream uploads and downloads from Amazon S3, from local filesystem or URLs",
-<<<<<<< HEAD
   "main": "./dist/index.js",
-=======
-  "main": "index.js",
->>>>>>> 99f639bc292bf41d9428abed7add342dd7eea62d
   "scripts": {
     "build": "babel src --presets babel-preset-es2015 --out-dir dist",
     "prepublish": "npm run build",
