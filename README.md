@@ -1,5 +1,5 @@
 # s3stream
-Thin wrapper to stream uploads and downloads from Amazon S3, from local filesystem or URLs
+Thin wrapper over existing libraries to standardize the interface for streaming uploads and downloads from Amazon S3, from local filesystem or URLs.
 
 ## Example usage
 ```js

@@ -73,12 +73,10 @@ class StringSink extends Writable {
 	}
 	_write(chunk, enc, next) {
 		this.chunks.push(chunk);
-		console.log('writing', this.chunks.length);
 		next();
 	}
 
 	getString() {
-		console.log('getting string', this.chunks.length);
 		return Buffer.concat(this.chunks).toString();
 	}
 }
