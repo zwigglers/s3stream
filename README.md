@@ -4,7 +4,7 @@ Thin wrapper over existing libraries to standardize the interface for streaming 
 ## Example usage
 ```js
 import AWS from "aws-sdk";
-import S3Stream from 'S3Stream';
+import S3Stream from 's3-streamer';
 
 let s3 = new AWS.S3();
 let s3stream = new S3Stream(s3);
