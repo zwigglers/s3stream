@@ -1,5 +1,5 @@
 {
-  "name": "s3stream",
+  "name": "s3-streamer",
   "version": "1.0.0",
   "description": "Thin wrapper to stream uploads and downloads from Amazon S3, from local filesystem or URLs",
   "main": "./dist/index.js",

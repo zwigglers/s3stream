@@ -1,6 +1,7 @@
 import AWS from "aws-sdk";
 import S3Stream from './S3Stream';
 
+// optional
 AWS.config.update({
 	accessKeyId: "<YOUR_ACCESS_KEY>",
 	secretAccessKey: '<YOUR_SECRET_ACCESS>',

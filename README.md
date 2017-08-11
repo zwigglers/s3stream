@@ -11,8 +11,16 @@ let s3stream = new S3Stream(s3);
 
 let s3params = { Bucket: "BUCKET", Key: "KEY" };
 
+// upload a string to s3
 s3stream.stringToS3("Hello World", s3params).then(function() {
+	console.log('Uploaded: %s', string);
 	// do something
+
+	s3stream.stringFromS3(s3params).then(function(string) {
+		console.log('Downloaded: %s', string);
+
+		// do something
+	});
 });
 ```
 ## Methods
@@ -44,5 +52,4 @@ Returns a Writable that you can pipe streams to.
 s3stream.downloadStream(s3params)
 ```
 Returns a Readable that you can pipe to other streams.
-
 
