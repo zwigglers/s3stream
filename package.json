@@ -1,11 +1,10 @@
 {
   "name": "s3-streamer",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Thin wrapper over existing libraries to standardize the interface for streaming uploads and downloads from Amazon S3. Supports streaming to/from variables or URLs without using the local filesystem.",
   "main": "./dist/index.js",
   "scripts": {
     "build": "babel src --presets babel-preset-es2015 --out-dir dist",
-    "prepublish": "npm run build",
     "index": "babel-node src/index.js",
     "test": "babel-node src/test.js"
   },
