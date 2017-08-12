@@ -1,29 +1,34 @@
 # s3stream
-Thin wrapper over existing libraries to standardize the interface for streaming uploads and downloads from Amazon S3, from local filesystem or URLs.
+Thin wrapper over existing libraries to standardize the interface for streaming uploads and downloads from Amazon S3. Supports streaming to/from variables or URLs without using the local filesystem.
 
 ## Example usage
 ```js
-import AWS from "aws-sdk";
-import S3Stream from 's3-streamer';
+var AWS = require('aws-sdk');
+var S3Stream = require('s3-streamer');
 
-let s3 = new AWS.S3();
-let s3stream = new S3Stream(s3);
+var s3 = new AWS.S3();
+var s3stream = new S3Stream(s3);
 
-let s3params = { Bucket: "BUCKET", Key: "KEY" };
+var s3params = { Bucket: "BUCKET", Key: "KEY" };
 
 // upload a string to s3
 s3stream.stringToS3("Hello World", s3params).then(function() {
 	console.log('Uploaded: %s', string);
 	// do something
 
+	// download the string from s3
 	s3stream.stringFromS3(s3params).then(function(string) {
 		console.log('Downloaded: %s', string);
 
 		// do something
 	});
+}).catch(function(err) {
+	console.log('Error');
+
+	// error handling
 });
 ```
-## Methods
+## Upload Methods
 
 ```js
 s3stream.urlToS3(url, s3params)
@@ -36,10 +41,21 @@ s3stream.stringToS3(string, s3params)
 Streams a string to an S3 object. Returns a bluebird promise.
 
 ```js
+s3stream.localFileToS3(filename, s3params)
+```
+Streams a local file to an S3 object. Returns a bluebird promise.
+
+## Upload Methods
+
+```js
 s3stream.stringFromS3(s3params)
 ```
 Streams an S3 object to a string variable. Returns a bluebird promise that resolves with the string.
 
+```js
+localFileFromS3(filename, s3params)
+```
+Streams an S3 object to a local file. Returns a bluebird promise that resolves with the given filename.
 
 ## Lower level methods
 
