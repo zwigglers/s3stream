@@ -45,7 +45,7 @@ s3stream.localFileToS3(filename, s3params)
 ```
 Streams a local file to an S3 object. Returns a bluebird promise.
 
-## Upload Methods
+## Download Methods
 
 ```js
 s3stream.stringFromS3(s3params)
@@ -53,7 +53,7 @@ s3stream.stringFromS3(s3params)
 Streams an S3 object to a string variable. Returns a bluebird promise that resolves with the string.
 
 ```js
-localFileFromS3(filename, s3params)
+s3stream.localFileFromS3(filename, s3params)
 ```
 Streams an S3 object to a local file. Returns a bluebird promise that resolves with the given filename.
 
